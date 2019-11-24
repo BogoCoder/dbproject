@@ -1,0 +1,52 @@
+body {
+    background-image: url("../img/rain.jpg");
+    margin: 0;
+    background-attachment: fixed;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.container{
+    display:grid;
+    grid-template: 
+    ".        .       .     .    ."  9rem
+    "arrpi    arrpi   .     .    ."
+    "arrpi    arrpi   .     form    form"
+    "arrpi    arrpi   .     form    form"
+    "arrpi    arrpi   .     .    ."
+    ".    .    .     .    ." 9rem
+    / 1fr    1fr    1fr   1fr   1fr
+    ;
+    grid-column-gap: 0;
+    justify-items: center;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+} 
+
+.arrpi{
+    grid-area: arrpi;
+}
+
+.arrpilogo{
+    padding: 20px 16px;
+    align-self: center;
+}
+
+.principaltext{
+    width: 200px;
+    height: 40px;
+}
+
+.arrpilogo:hover{
+    opacity: 0.5;
+    padding: 20px 16px;
+    align-self: start;
+}
+
+.busqueda{
+    grid-area: busqueda;
+}
+
+form{
+    grid-area: form;
+}
