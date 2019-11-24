@@ -43,10 +43,6 @@ body {
     align-self: start;
 }
 
-.busqueda{
-    grid-area: busqueda;
-}
-
 form{
     grid-area: form;
 }

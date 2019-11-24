@@ -1,0 +1,85 @@
+@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+
+body {
+    background-image: url("../img/rain.jpg");
+    margin: 0;
+    background-attachment: fixed;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.container{
+    display:grid;
+    grid-template: 
+    ".        .       .     .    ."  9rem
+    "arrpi    arrpi   .     .    ."
+    "arrpi    arrpi   .     form    form"
+    "arrpi    arrpi   .     form    form"
+    "arrpi    arrpi   .     .    ."
+    ".    .    .     .    ." 9rem
+    / 1fr    1fr    1fr   1fr   1fr
+    ;
+    grid-column-gap: 0;
+    justify-items: center;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+} 
+
+.arrpi{
+    grid-area: arrpi;
+}
+
+.arrpilogo{
+    padding: 20px 16px;
+    align-self: center;
+}
+
+.principaltext{
+    width: 200px;
+    height: 40px;
+}
+
+.arrpilogo:hover{
+    opacity: 0.5;
+    padding: 20px 16px;
+    align-self: start;
+}
+
+form{
+    grid-area: form;
+}
+
+/***
+ *  Simple Pure CSS Star Rating Widget Bootstrap 4 
+ * 
+ *  www.TheMastercut.co
+ *  
+ ***/
+
+  /* Styling h1 and links
+ ––––––––––––––––––––––––––––––––– */
+ h1[alt="Simple"] {color: black;}
+ a[href], a[href]:hover {color: grey; font-size: 0.5em; text-decoration: none}
+ 
+ 
+ .starrating > input {display: none;}  /* Remove radio buttons */
+ 
+ .starrating > label:before { 
+   content: "\f005"; /* Star */
+   margin: 2px;
+   font-size: 4em;
+   font-family: FontAwesome;
+   display: inline-block; 
+ }
+ 
+ .starrating > label
+ {
+   color: #222222; /* Start color when not clicked */
+ }
+ 
+ .starrating > input:checked ~ label
+ { color: #ffca08 ; } /* Set yellow color when star checked */
+ 
+ .starrating > input:hover ~ label
+ { color: #ffca08 ;  } /* Set yellow color when star hover */
+ 
