@@ -21,10 +21,10 @@
 <body>
 	<div class="container">
 
-	<form>
+	<form action="http://localhost:8080/arrpi/arrpiServlet/BusquedaPorNombre">
 		<div class="form-group buscar_box">
 			<label for="input_restaurante">Buscar restaurante...</label>
-			<input type="text" class="form-control" id="input_restaurante" aria-describedby="buscaHelp" placeholder="Buscar...">
+			<input type="text" class="form-control" name="input_restaurante" id="input_restaurante" aria-describedby="buscaHelp" placeholder="Buscar...">
 			<small id="buscaHelp" class="form-text text-muted">Asegurate de escribir bien el nombre del restaurante.</small>
 		</div>
 		<button type="submit" class="btn btn-danger enviar">Enviar</button>

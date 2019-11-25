@@ -21,10 +21,10 @@
 <body>
 	<div class="container">
 
-	<form class="needs-validation" novalidate>
+	<form class="needs-validation" novalidate action="http://localhost:8080/arrpi/arrpiServlet/EncuentraTuRestaurante">
 		<div class="form-group">
 				<label for="input_comida">Tipo de comida</label>
-				<select id="input_comida" class="form-control">
+				<select name = "input_comida" id="input_comida" class="form-control">
 					<option selected>Pizza</option>
 					<option>Crepes</option>
 					<option>Pollo</option>
@@ -36,7 +36,7 @@
 					<div class="input-group-prepend">
 					<div class="input-group-text">$</div>
 					</div>
-					<input type="number" class="form-control" id="input_presupuesto"  placeholder="Ojalá no sea 0... (COP)" required>
+					<input type="number" class="form-control" name = "input_presupuesto" id="input_presupuesto"  placeholder="Ojalá no sea 0... (COP)" required>
 					<div class="invalid-feedback">
 						Es diferente 0 a vacío.
 					</div>
@@ -45,7 +45,7 @@
 
 		<div class="form-group">
 				<label for="input_zona">Zona</label>
-				<select id="input_zona" class="form-control">
+				<select name = "input_zona" id="input_zona" class="form-control">
 					<option selected>Candelaria</option>
 					<option>Cedritos</option>
 					<option>Usaquén</option>
