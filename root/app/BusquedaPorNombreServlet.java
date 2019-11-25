@@ -28,7 +28,7 @@ public class BusquedaPorNombreServlet extends HttpServlet{
 		DriverManager.getConnection (
 		"jdbc:postgresql://localhost:5432/arrpi" ,
 		"postgres" ,
-		"135890" ) ) {
+		"postgres" ) ) {
 		Statement statement = conexion.createStatement();
 
 		out.println("<HEAD><TITLE>Conectado</TITLE></HEAD>");

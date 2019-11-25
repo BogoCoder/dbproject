@@ -21,21 +21,14 @@
 <body>
 	<div class="container">
 
-	<form class="needs-validation" novalidate>
-		<div class="form-group">
-				<label for="input_nombre">Nombre</label>
-				<input type="text" class="form-control" id="input_nombre"  placeholder="¡No apellidos!" required>
-				<div class="invalid-feedback">
-					Según nuestras fuentes, deberías tener nombre.
-				</div>
-		</div>
+	<form class="needs-validation" novalidate action="http://localhost:8080/arrpi/arrpiServlet/Transferencia">
 
 		<div class="form-group">
-				<label for="input_apellidos">Apellidos</label>
-				<input type="text" class="form-control" id="input_apellidos"  placeholder="Ahora sí..." required>
-				<div class="invalid-feedback">
-					¿Y tus padres?
-				</div>
+			<label for="input_nombre">Nombre de usuario</label>
+			<input type="text" class="form-control" name="input_nombre" id="input_nombre"  placeholder="¡No apellidos!" required>
+			<div class="invalid-feedback">
+				Según nuestras fuentes, deberías tener nombre.
+			</div>
 		</div>
 
 		<div class="form-group">
@@ -47,24 +40,32 @@
 		</div>
 
 		<div class="form-group">
+			<label for="input_hora">Fecha</label>
+			<input type="text" class="form-control" name="input_hora"    id="input_hora"  placeholder="AA-MM-DD 00:00" required>
+			<div class="invalid-feedback">
+				Creo que no podemos adivinarla...
+			</div>
+		</div>
+
+		<div class="form-group">
 				<label for="input_monto">Monto a transferir</label>
 				<div class="input-group">
 					<div class="input-group-prepend">
 					<div class="input-group-text">$</div>
 					</div>
-					<input type="number" class="form-control" id="input_monto"  placeholder="Ojalá no sea 0... (COP)" required>
+					<input type="number" class="form-control" name="input_monto" id="input_monto"  placeholder="Ojalá no sea 0... (COP)" required>
 					<div class="invalid-feedback">
 						Es diferente 0 a vacío.
 					</div>
 				</div>
 		</div>
 
-		<div class="form-group credito">
-				<label for="input_cod">Código del usuario</label>
-				<input type="number" class="form-control" id="input_cod"  placeholder="Al que le envías..." required>
-				<div class="invalid-feedback">
-					¿Cómo se sentiría tu amigo?
-				</div>
+		<div class="form-group">
+			<label for="input_nombresend">Nombre de usuario al que le envías</label>
+			<input type="text" class="form-control" name="input_nombresend" id="input_nombresend"  placeholder="¡No apellidos!" required>
+			<div class="invalid-feedback">
+				¿Cómo se sentiría tu amigo?
+			</div>
 		</div>
 
 		<button type="submit" class="btn btn-danger enviar">Enviar</button>

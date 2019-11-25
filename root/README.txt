@@ -1,0 +1,2 @@
+Se debe iniciar desde el archivo index.html contenido en esta carpeta, ya teniendo el servidor inicializado. A través de los menús se puede navegar por las distintas funcionalidades.
+Algunos html contenidos en assets/html son diferentes a los jsp contenidos en el directorio de la aplicación arrpi, pues estos últimos se encargan también de funcionalidades conectadas al servidor. También algunos de los html contenidos en assets/html están como prototipos, y no se utilizan.
