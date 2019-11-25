@@ -11,8 +11,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-@WebServlet("/arrpiServlet/EncuentraTuRestaurante")
-public class EncuentraTuRestauranteServlet extends HttpServlet{
+@WebServlet("/arrpiServlet/Calificar")
+public class CalificacionServlet extends HttpServlet{
 
 	public void doGet(HttpServletRequest request,
 	HttpServletResponse response)
@@ -20,9 +20,12 @@ public class EncuentraTuRestauranteServlet extends HttpServlet{
 	{
 		PrintWriter out = response.getWriter();
 		response.setContentType("text/html");
-		String inputComida = request.getParameter("input_comida");
-		String inputPresupuesto = request.getParameter("input_presupuesto");
-		String inputZona = request.getParameter("input_zona");
+		String inputNombre = request.getParameter("input_nombre");
+		String inputCod = request.getParameter("input_codfac");
+		String inputCalificacion = request.getParameter("rating");
+		String inputSugerencias = request.getParameter("sug");
+
+		inputSugerencias.replace("\r\n", "");
 		try (
 		Connection conexion =
 		DriverManager.getConnection (
@@ -33,25 +36,22 @@ public class EncuentraTuRestauranteServlet extends HttpServlet{
 
 		out.println("<HEAD><TITLE>Conectado</TITLE></HEAD>");
 
-		ResultSet resultSet = statement.executeQuery("select * from Restaurante where tipo_comida = '" + inputComida + "' AND '" + inputPresupuesto + "' >= precios AND direccion = '" + inputZona + "';");
+		String outp = "";
+		if(inputNombre != null && inputCod != null && inputCalificacion != null){
+			statement.executeUpdate("insert into Calificar values"+ "('" + inputNombre + "', '"+ inputCod + "', '" + inputCalificacion + "', '" + inputSugerencias + "')" + ";");
 
-		String outp = "<tr>" ;
-		while (resultSet.next()) {
-			outp +="<td>" + resultSet.getString("nombre") + "</td>";
+			outp = "¡Exitoso!";
 		}
-		outp +=  "</tr>";
-
-		
 		request.setAttribute("confirm", outp);
-		request.getRequestDispatcher("/WEB-INF/encuentra_tu_restaurante.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/calificacion.jsp").forward(request, response);
 
 		out.println("<p> No deberíamos llegar acá. </p>");
 		out.println("</BODY>");
 
 	} catch (SQLException e) {
-		String outp = "Algo salió mal.";
+		String outp = "Algo salió mal. Seguramente ya calificaste a este restaurante.";
 		request.setAttribute("confirm", outp);
-		request.getRequestDispatcher("/WEB-INF/encuentra_tu_restaurante.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/calificacion.jsp").forward(request, response);
 		e.printStackTrace () ;
 		}
 	}

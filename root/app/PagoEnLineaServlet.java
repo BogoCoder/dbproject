@@ -35,14 +35,11 @@ public class PagoEnLineaServlet extends HttpServlet{
 		Statement statement = conexion.createStatement();
 
 		out.println("<HEAD><TITLE>Conectado</TITLE></HEAD>");
-		//Ejemplo 1 consulta parametrizada
 		String atributos = "nombre";  
 		String relacion = "Pagar";
-		out.println("<p> insert into "+relacion+" values"+ "(" + inputNombre + ", "+ inputCod + "," + inputFecha + "," + inputCantidad + ")" + ";</p>");
+
 		if(inputCantidad != null && inputCod != null && inputFecha != null && inputNombre != null){
 			statement.executeUpdate("insert into "+relacion+" values"+ "('" + inputNombre + "', '"+ inputCod + "', '" + inputFecha + "', '" + inputCantidad + "')" + ";");
-
-			out.println("<p> 1</p>");
 	
 			statement.executeUpdate("update App_Usuario set saldo = saldo::integer - " + inputCantidad + " where usuario = '" + inputNombre + "' ;");
 		}

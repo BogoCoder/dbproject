@@ -32,7 +32,6 @@ public class BusquedaPorNombreServlet extends HttpServlet{
 		Statement statement = conexion.createStatement();
 
 		out.println("<HEAD><TITLE>Conectado</TITLE></HEAD>");
-		//Ejemplo 1 consulta parametrizada
 		String atributos = "nombre";  
 		String relacion = "Restaurante";
 		ResultSet resultSet = statement.executeQuery("select "+atributos+" from "+relacion+ " where " + atributos + "=" + "'" +inputNombre + "'" + ";");

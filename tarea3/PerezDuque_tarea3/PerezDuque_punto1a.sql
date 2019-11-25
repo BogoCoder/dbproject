@@ -2,14 +2,14 @@
 --psql -d arrpi -f GomezLopez_tarea2_punto2.sql
 
 -- insert into Usuario
-insert into Usuario values('samuelperez.di', '12358', 'Samuel', 'Pérez', '1007490336', '3225861027', 'samuelperez.di@gmail.com');
+insert into Usuario values('samuelperez.di', '12358', 'Samuel', 'Perez', '1007490336', '3225861027', 'samuelperez.di@gmail.com');
 insert into Usuario values('nicolasdb10', '100900', 'Nicolas', 'Duque', '1000249103', '313565646', 'nicolasduque33@gmail.com');
-insert into Usuario values('juanferna.perez', '1$315#$!', 'Juan', 'Pérez', '5722123345', '3225161426', 'juanferna.perez@urosario.edu.co');
+insert into Usuario values('juanferna.perez', '1$315#$!', 'Juan', 'Perez', '5722123345', '3225161426', 'juanferna.perez@urosario.edu.co');
 
 -- insert into Cuenta_Bancaria
-insert into Cuenta_Bancaria values('1034678951', 'débito', 'bancolombia');
-insert into Cuenta_Bancaria values('1467925831', 'débito', 'bancolombia');
-insert into Cuenta_Bancaria values('1287469535', 'crédito', 'colpatria');
+insert into Cuenta_Bancaria values('1034678951', 'debito', 'bancolombia');
+insert into Cuenta_Bancaria values('1467925831', 'debito', 'bancolombia');
+insert into Cuenta_Bancaria values('1287469535', 'credito', 'colpatria');
 
 -- insert into Usuario_Cuenta_Bancaria
 insert into Usuario_Cuenta_Bancaria values('1034678951', 'bancolombia', 'samuelperez.di');
@@ -24,7 +24,7 @@ insert into App_Usuario values('juanferna.perez', '2002-11-30', '15000000');
 -- insert into Restaurante
 insert into Restaurante values('001', '001#', 'Dados Pizza', 'Candelaria', 'Pizza', 'Pizza de distintos tamaños y sabores, junto con bebida', '15000', 4.6);
 insert into Restaurante values('002', '002#', 'Crips or Wiffles', 'Cedritos', 'Crepes', 'Crepes de distintos tamaños y sabores, junto con bebida natural', '40000', 4.3);
-insert into Restaurante values('003', '003#', 'CFK', 'Usaquén', 'Pollo', 'Pollo de distintos tamaños y sabores, junto con gaseosa', '25000', 4.7);
+insert into Restaurante values('003', '003#', 'CFK', 'Usaquen', 'Pollo', 'Pollo de distintos tamaños y sabores, junto con gaseosa', '25000', 4.7);
 
 -- insert into App_Restaurante
 insert into App_Restaurante values('001', '1991-03-11', '60000000');

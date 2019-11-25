@@ -14,18 +14,17 @@ import java.sql.Statement;
 @WebServlet("/arrpiServlet/Reservas")
 public class ReservasServlet extends HttpServlet{
 
-	@Override
 	public void doGet(HttpServletRequest request,
 	HttpServletResponse response)
 	throws ServletException, IOException
 	{
 		PrintWriter out = response.getWriter();
 		response.setContentType("text/html");
-		String inputCod = request.getParameter("input_codfac");
 		String inputNombre = request.getParameter("input_nombre");
-		String inputFecha = request.getParameter("input_fecha");
-		String inputCantidad = request.getParameter("input_cantidad");
-
+		String inputCod = request.getParameter("input_codfac");
+		String inputDocumento = request.getParameter("input_documento");
+		String inputNumero = request.getParameter("input_numpe");
+		String inputHora = request.getParameter("input_hora");
 		try (
 		Connection conexion =
 		DriverManager.getConnection (
@@ -35,20 +34,15 @@ public class ReservasServlet extends HttpServlet{
 		Statement statement = conexion.createStatement();
 
 		out.println("<HEAD><TITLE>Conectado</TITLE></HEAD>");
-		//Ejemplo 1 consulta parametrizada
-		String atributos = "nombre";  
-		String relacion = "Pagar";
-		out.println("<p> insert into "+relacion+" values"+ "(" + inputNombre + ", "+ inputCod + "," + inputFecha + "," + inputCantidad + ")" + ";</p>");
-		if(inputCantidad != null && inputCod != null && inputFecha != null && inputNombre != null){
-			statement.executeUpdate("insert into "+relacion+" values"+ "('" + inputNombre + "', '"+ inputCod + "', '" + inputFecha + "', '" + inputCantidad + "')" + ";");
 
-			out.println("<p> 1</p>");
-	
-			statement.executeUpdate("update App_Usuario set saldo = saldo::integer - " + inputCantidad + " where usuario = '" + inputNombre + "' ;");
+		String outp = "";
+		if(inputNombre != null && inputCod != null && inputDocumento != null && inputNumero != null && inputHora != null){
+			statement.executeUpdate("insert into Reservar values"+ "('" + inputNombre + "', '"+ inputCod + "', '" + inputNumero + "', '" + inputHora + "')" + ";");
+
+			outp = "¡Exitoso!";
 		}
-		String outp = "¡Exitoso!";
 		request.setAttribute("confirm", outp);
-		request.getRequestDispatcher("/WEB-INF/pago_en_linea.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/reservas.jsp").forward(request, response);
 
 		out.println("<p> No deberíamos llegar acá. </p>");
 		out.println("</BODY>");
@@ -56,7 +50,7 @@ public class ReservasServlet extends HttpServlet{
 	} catch (SQLException e) {
 		String outp = "Algo salió mal.";
 		request.setAttribute("confirm", outp);
-		request.getRequestDispatcher("/WEB-INF/pago_en_linea.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/reservas.jsp").forward(request, response);
 		e.printStackTrace () ;
 		}
 	}

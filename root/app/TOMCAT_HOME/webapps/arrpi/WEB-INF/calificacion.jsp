@@ -12,58 +12,62 @@
 	<!--Font-->
 	<link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
 
-	<link rel="stylesheet" href="../css/encuentra_tu_restaurante.css">
+	<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="../css/calificacion.css">
 	
 
-	<title>Encuentra tu restaurante</title>
+	<title>Calificación y sugerencias</title>
 	<link rel="icon" href="../img/favicon.png">
 </head>
 
 <body>
 	<div class="container">
 
-	<form class="needs-validation" novalidate action="/arrpi/arrpiServlet/EncuentraTuRestaurante">
+	<form class="needs-validation" novalidate action="/arrpi/arrpiServlet/Calificar">
+
+			<h2 class="text-center" alt="Simple">Calificación</h2>
+			 
+			<div class="starrating risingstar d-flex justify-content-center flex-row-reverse">
+				<input type="radio" id="star5" name="rating" value="5" /><label for="star5" title="5 star">5</label>
+				<input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="4 star">4</label>
+				<input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="3 star">3</label>
+				<input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="2 star">2</label>
+				<input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="1 star">1</label>
+			</div>	
+
 		<div class="form-group">
-				<label for="input_comida">Tipo de comida</label>
-				<select name = "input_comida" id="input_comida" class="form-control">
-					<option selected>Pizza</option>
-					<option>Crepes</option>
-					<option>Pollo</option>
-				</select>
-		</div>
-		<div class="form-group">
-				<label for="input_presupuesto">Presupuesto</label>
-				<div class="input-group">
-					<div class="input-group-prepend">
-					<div class="input-group-text">$</div>
-					</div>
-					<input type="number" class="form-control" name = "input_presupuesto" id="input_presupuesto"  placeholder="Ojalá no sea 0... (COP)" required>
-					<div class="invalid-feedback">
-						Es diferente 0 a vacío.
-					</div>
-				</div>
+			<label for="input_nombre">Nombre de usuario</label>
+			<input type="text" class="form-control" name="input_nombre" id="input_nombre"  placeholder="¡No apellidos!" required>
+			<div class="invalid-feedback">
+				Según nuestras fuentes, deberías tener nombre.
+			</div>
 		</div>
 
 		<div class="form-group">
-				<label for="input_zona">Zona</label>
-				<select name = "input_zona" id="input_zona" class="form-control">
-					<option selected>Candelaria</option>
-					<option>Cedritos</option>
-					<option>Usaquen</option>
-				</select>
+			<label for="input_codfac">Código de restaurante</label>
+			<input type="number" class="form-control" name = "input_codfac" id="input_codfac"  placeholder="Léelo bien..." required>
+			<div class="invalid-feedback">
+				Debe haber un código.
+			</div>
 		</div>
-		<button type="submit" class="btn btn-danger enviar">Enviar</button>
+
+		<div class="form-group">
+				<label for="sug">Sugerencias</label>
+				<textarea class="form-control" name = "sug" id="sug"  placeholder="Amamos los gatos."></textarea>
+		</div>
+
 		<div class="alert alert-info" role="alert">
-				<h4 class="alert-heading">Resultados</h4>
-				<p><strong>${confirm}</strong></p>
-				<p class="mb-0">Puedes <a href="/arrpi/arrpiServlet/PagoEnLinea" class="alert-link">pagar en línea</a>,hacer una <a href="/arrpi/arrpiServlet/Reservas" class="alert-link">reserva</a>, o <a href="/arrpi/arrpiServlet/Calificar" class="alert-link">calificar</a>.</p>
+			<h4 class="alert-heading">Resultado</h4>
+			<p><strong>${confirm}</strong></p>
 		</div>
+		
+		<button type="submit" class="btn btn-danger enviar">Enviar</button>
 	</form>
 	<!-- <div class = "principal">
 			<a href="index.html"><img class = "principaltext" src= "../img/principal.png" alt="principal"></a> 
 	</div> -->
 	<div class = "arrpi">
-			<a><img class = "arrpilogo" src= "../img/arrpi.png" alt="arrpi"></a> 
+			<a href="../../index.html"><img class = "arrpilogo" src= "../img/arrpi.png" alt="arrpi"></a> 
 	</div> 
 	
 	<script>
@@ -86,11 +90,11 @@
 			  }, false);
 			})();
 	</script>
-		 
+
 	<!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>    
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> 
 </body>
 </html>

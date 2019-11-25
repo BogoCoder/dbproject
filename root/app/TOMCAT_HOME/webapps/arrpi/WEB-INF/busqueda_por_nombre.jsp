@@ -33,7 +33,7 @@
 		<div class="alert alert-info" role="alert">
 				<h4 class="alert-heading">Resultados</h4>
 				<p><strong>${nombreConsulta}</strong></p>
-				<p class="mb-0">Puedes <a href="/arrpi/arrpiServlet/PagoEnLinea" class="alert-link">pagar en línea</a>,hacer una <a href="/arrpi/arrpiServlet/Reservas" class="alert-link">reserva</a>, o <a href="/arrpi/arrpiServlet/PagoEnLinea" class="alert-link">calificar</a>.</p>
+				<p class="mb-0">Puedes <a href="/arrpi/arrpiServlet/PagoEnLinea" class="alert-link">pagar en línea</a>,hacer una <a href="/arrpi/arrpiServlet/Reservas" class="alert-link">reserva</a>, o <a href="/arrpi/arrpiServlet/Calificar" class="alert-link">calificar</a>.</p>
 		</div>
 	</form>
 	<!-- <div class = "principal">

@@ -1,3 +1,5 @@
+<%@ page contentType="text/html; charset=UTF-8" %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,27 +23,28 @@
 <body>
 	<div class="container">
 
-	<form class="needs-validation" novalidate>
+	<form class="needs-validation" novalidate action="/arrpi/arrpiServlet/Reservas">
 
 		<div class="form-group">
-				<label for="input_nombre">Nombre</label>
-				<input type="text" class="form-control" id="input_nombre"  placeholder="¡No apellidos!" required>
-				<div class="invalid-feedback">
-					Según nuestras fuentes, deberías tener nombre.
-				</div>
+			<label for="input_nombre">Nombre de usuario</label>
+			<input type="text" class="form-control" name="input_nombre" id="input_nombre"  placeholder="¡No apellidos!" required>
+			<div class="invalid-feedback">
+				Según nuestras fuentes, deberías tener nombre.
+			</div>
 		</div>
 
+
 		<div class="form-group">
-				<label for="input_apellidos">Apellidos</label>
-				<input type="text" class="form-control" id="input_apellidos"  placeholder="Ahora sí..." required>
-				<div class="invalid-feedback">
-					¿Y tus padres?
-				</div>
+			<label for="input_codfac">Código de restaurante</label>
+			<input type="number" class="form-control" name = "input_codfac" id="input_codfac"  placeholder="Léelo bien..." required>
+			<div class="invalid-feedback">
+				Debe haber un código.
+			</div>
 		</div>
 
 		<div class="form-group">
 				<label for="input_documento">Documento</label>
-				<input type="number" class="form-control" id="input_documento"  placeholder="El de identidad" required>
+				<input type="number" class="form-control" name="input_documento" id="input_documento"  placeholder="El de identidad" required>
 				<div class="invalid-feedback">
 					Sin tu número de identificación sería imposible que el gobierno te espiara.
 				</div>
@@ -49,7 +52,7 @@
 
 		<div class="form-group">
 				<label for="input_numpe">Número de personas</label>
-				<input type="number" class="form-control" id="input_numpe"  placeholder="¿Sabemos contar?" required>
+				<input type="number" class="form-control" name="input_numpe" id="input_numpe"  placeholder="¿Sabemos contar?" required>
 				<div class="invalid-feedback">
 					Imposible.
 				</div>
@@ -57,12 +60,17 @@
 
 		<div class="form-group">
 				<label for="input_hora">Hora de la reserva</label>
-				<input type="text" class="form-control" id="input_hora"  placeholder="00:00" required>
+				<input type="text" class="form-control" name="input_hora"    id="input_hora"  placeholder="AA-MM-DD 00:00" required>
 				<div class="invalid-feedback">
 					Creo que no podemos adivinarla...
 				</div>
 		</div>
 
+		<div class="alert alert-info" role="alert">
+			<h4 class="alert-heading">Resultado</h4>
+			<p><strong>${confirm}</strong></p>
+		</div>
+		
 		<button type="submit" class="btn btn-danger enviar">Enviar</button>
 	</form>
 	<!-- <div class = "principal">

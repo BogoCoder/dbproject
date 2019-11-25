@@ -28,7 +28,7 @@
 				<label for="input_codfac">Código de restaurante</label>
 				<input type="number" class="form-control" name = "input_codfac" id="input_codfac"  placeholder="Léelo bien..." required>
 				<div class="invalid-feedback">
-					Debe haber un código de factura.
+					Debe haber un código.
 				</div>
 		</div>
 
